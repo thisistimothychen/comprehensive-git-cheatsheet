@@ -126,6 +126,28 @@ Commit the .gitignore file:
     git commit -m 'Add .gitignore file'
 
 
+#### Understanding what to ignore
+- compiled source code: you want to store uncompiled code only, and then compile the code after you pull down the repository (since compiled code depends on the computer specs)
+- packages and compressed files (files that you're usually not using in the project itself)
+- logs and databases (files that change often)
+- operating system generated files (these files won't related to your project)
+- user uploaded assets (images, PDFs, videos) usually stored during development/testing
+
+More resources:
+
+[GitHub's help article on .gitignore](https://help.github.com/articles/ignoring-files)
+
+[GitHub’s collection of .gitignore file templates](https://github.com/github/gitignore)
+
+
+#### Ignoring tracked files
+(Use for files you want to stop tracking after you've committed to your repository.) Remove `filename` from the staging index (not from the repository or working directory) so that it is no longer tracked (even if it has been committed previously):
+
+    git rm --cached filename
+
+#### Tracking empty directories
+Create a `.gitkeep` file in the directory
+
 
 
 
@@ -137,6 +159,11 @@ HEAD
    - where writing commits takes place
 
    
+
+
+
+
+
 
 
 
