@@ -20,7 +20,7 @@ Full git cheatsheet based on Kevin Skoglund's Git Essential Training on Lynda.co
      - Return all commits made up until August 9th, 2016: `git log --until=2016-08-09`
      - Return all commits made by a certain author: `git log --author="Name"`
      - Return all commits with "Init" in the commit message (case sensitive): `git log --grep="Init"`
-     - Returns a nice view of the branches and history of [merges](#Merging): `git log --graph --oneline --all --decorate`
+     - Returns a nice view of the branches and history of [merges](#merging): `git log --graph --oneline --all --decorate`
 
 
 
