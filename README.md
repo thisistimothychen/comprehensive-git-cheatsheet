@@ -278,6 +278,61 @@ Delete a stashed change named `stash@{0}`:
     git stash clear
 
 
+## Remotes
+Allows for collaboration with others. You can take your changes and put them on a remote server so that other people can see them, make changes of their own, and upload those changes back to the remote server. You will also be able to pull others' changes back into your repository.
+
+#### Adding a remote repository
+1. Set up GitHub and create a repository
+2. `git remote` shows all the remotes
+3. `git remote add <alias> <url>` to add a remote -- use the repository you created in step 1 to find `<alias>` and `<url>` (it's on the initial setup page)
+4. `git remote rm <alias>` to remove the `<alias>` remote
+5. `git push -u <alias> <branch>` to push `<branch>` to the `<alias>` remote (you may be prompted to input your GitHub username and password)
+
+`git branch -r` to see remote branches
+
+`git branch -a` to show both remote and local branches
+
+#### Cloning a remote repository to your local machine
+1. Navigate to your desired directory
+2. Get the path to the repository you want to clone
+3. `git clone https://github.com/coolkid/coolproject.git` to clone the `coolproject` repository from GitHub user `coolkid`
+
+#### Pushing changes to a remote repository
+    git push <alias> <branch>
+    
+(If your remote is being tracked, you can just use `git push` instead.)
+
+#### Fetching changes from a remote repository
+Update `<alias>/master` with what's on the remote repository: run `git fetch <alias>` or `git fetch`
+
+##### Guidelines:
+- fetch before you work
+- fetch before you push
+- fetch often
+
+
+#### Merging in fetched changes
+Merge local version of `<alias>/master` with current branch
+
+    git merge <alias>/master
+
+Do `git fetch` and `git merge` in one single command:
+
+    git pull
+
+#### Checking out remote branches
+
+    git branch branch_we_are_creating  <alias>/where_we_are_checking_out_from
+
+#### Pushing to an updated remote branch
+GitHub will not let you push changes to a branch if there needs to be a merge. You must `fetch` changes from the remote repository, `merge` the changes in your local repository, and then `push` back to the remote repository.
+
+#### Deleting a remote branch
+`git push <alias> :remote_branch_to_delete` or `git push <alias> --delete remote_branch_to_delete`
+
+
+
+---
 
 ## Terminology
 HEAD
