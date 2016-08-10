@@ -205,6 +205,33 @@ Show all branches that are completely included in current branch:
     git branch -D branch_to_delete
 
 
+## Merging
+Simple case of merging:
+1. Checkout into the branch that you want to _receive_ the changes
+2. `git merge branch_to_get_changes_from`
+
+Merge without using fast-forward method (when you want to just use the `branch_to_get_changes_from`'s commits):
+
+    git merge --no-ff branch_to_get_changes_from
+
+Merge only if the fast-forward method can be used (creates a merge commit message instead of just using the `branch_to_get_changes_from`'s commits):
+
+    git merge --ff-only branch_to_get_changes_from
+
+#### Dealing with merge conflicts:
+Abort a merge (check that you're in the merging state):
+
+    git merge --about
+
+Resolve the conflicts manually. Look at the differences and pick which one you want to keep and delete the one you want to remove. Then save your file, run `git add .` and then `git commit` or `git commit -m 'Commit message'`
+
+    <<<<<<< HEAD
+    <p>Hello, World!</p>
+    =======
+    <p>Goodbye, World!</p>
+    >>>>>>> branch_to_get_changes_from
+
+
 
 ## Terminology
 HEAD
