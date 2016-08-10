@@ -153,6 +153,55 @@ More resources:
 Create a `.gitkeep` file in the directory
 
 
+## Navigating the Commit Tree
+You can reference commits in Git using the following tree-ish methods:
+- full SHA-1 hash
+- short SHA-1 hash (at least 4 characters for small projects, and 8-10 characters to be unambiguous)
+- HEAD pointer
+- branch reference (this would refer to the tip of the branch)
+- parent commit (`HEAD^`, `acf87504^`, `master^`, `HEAD~1`, `HEAD~`)
+- grandparent commit (`HEAD^^`, `acf87504^^`, `master^^`, `HEAD~2`)
+- great-grandparent commit (`HEAD^^^`, `acf87504^^^`, `master^^^`, `HEAD~3`)
+
+#### Exploring tree listings
+    git ls-tree <tree-ish>
+
+#### Getting more from the commit log
+- Show only one line for each commit: `git log --oneline`
+- Show only 5 commits: `git log -5`
+- Show the commits since August 9th, 2016: `git log --since=2016-08-09`
+- Show the commits until August 9th, 2016: `git log --until=2016-08-09` or `git log --before=2016-08-09`
+- Other time formats: `git log --since="2 weeks ago"`, `git log --since=2.weeks`, `git log --until=3.days`
+- Show all by a certain author: `git log --author="Name"`
+- Show all commits with "temp" in the commit message: `git log --grep="temp"`
+- Show all commits between `2907d12` and `acf8750`: `git log 2907d12..acf8750`
+- Show all commits that have affected `filename`: `git log filename`
+- Show the actual changes: `git log -p`
+- More can be found by running `git log --help`
+
+
+## Comparing commits
+Show all changes since commit `2907d12`:
+
+    git diff 2907d12
+
+Show all changes between `2907d12` and `acf8750`:
+
+    git diff 2907d12..acf8750
+
+Show changes in `filename` between `2907d12` and `acf8750`:
+
+    git diff 2907d12..acf8750 filename
+
+Show snapshot of changes between `2907d12` and `acf8750`:
+
+    git diff --stat --summary 2907d12..acf8750
+    
+Other options:
+- `-b` or `--ignore-space-change` (insignificant changes)
+- `-w` or `--ignore-all-space`
+
+
 
 ## Branching
 - try new ideas
@@ -335,15 +384,13 @@ GitHub will not let you push changes to a branch if there needs to be a merge. Y
 ---
 
 ## Terminology
-HEAD
+HEAD:
 - pointer to "tip" of current branch in repository
 - last state of repository, what was last checked out
 - points to parent of next commit
    - where writing commits takes place
 
-   
-
-
+Tree-ish: something that references part of the tree
 
 
 
