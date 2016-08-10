@@ -232,6 +232,16 @@ Resolve the conflicts manually. Look at the differences and pick which one you w
     <p>Goodbye, World!</p>
     >>>>>>> branch_to_get_changes_from
 
+Use a merge tool (use the following command to see the tools):
+
+    git mergetool
+
+#### Strategies to reduce merge conflicts
+- keep lines short so you can pinpoint your conflicts
+- keep commits small and focused
+- beware stray edits to whitespace (spaces, tabs, line returns)
+- merge often (break up and resolve conflicts as you go)
+- track changes to master (keep your branches and master in sync)
 
 
 ## Terminology
