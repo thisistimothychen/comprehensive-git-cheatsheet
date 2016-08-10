@@ -12,12 +12,15 @@ Full git cheatsheet based on Kevin Skoglund's Git Essential Training on Lynda.co
 5. Add all changes that have been made in the working directory (stage your changes): `git add .`
 6. Add only certain files with changes to the staging index: `git add filename`
 7. Commit your staged changes with a message: `git commit -m 'message here'`
-8. View commits you've made: `git log`
+8. OR Add all unstaged files and commit them together: `git commit -am 'message here'`
+9. View commits you've made: `git log`
      - Return most recent 5 commits: `git log -n 5`
+     - Return all commits in a concise format: `git log --oneline`
      - Return all commits made since August 9th, 2016: `git log --since=2016-08-09`
      - Return all commits made up until August 9th, 2016: `git log --until=2016-08-09`
      - Return all commits made by a certain author: `git log --author="Name"`
      - Return all commits with "Init" in the commit message (case sensitive): `git log --grep="Init"`
+
 
 
 ## Making Changes to Files
@@ -148,6 +151,58 @@ More resources:
 #### Tracking empty directories
 Create a `.gitkeep` file in the directory
 
+
+
+## Branching
+- try new ideas
+- isoltae features or sections of work
+
+#### Viewing and creating branches
+View all branches in local repository:
+
+    git branch
+
+Create new branch:
+
+    git branch branch_name
+
+#### Switching branches
+
+    git checkout branch_name
+
+#### Creating and switching branches (at same time)
+
+    git checkout -b branch_name
+
+
+#### Comparing branches
+
+    git diff first_branch..second_branch
+
+Put differences on one line:
+
+    git diff --color-words first_branch..second_branch
+
+Flip the "old branch" and "new branch":
+
+    git diff --color-words second_branch..first_branch
+
+Show all branches that are completely included in current branch:
+
+    git branch --merged
+
+#### Renaming branches
+
+    git branch --move old_branch_name new_branch_name
+
+#### Deleting branches
+(You cannot be on `branch_to_delete` to run the following command.) Delete a branch that has been fully merged:
+
+    git branch -d branch_to_delete
+
+**[CAUTION]** Delete a branch that has NOT been fully merged:
+
+    git branch -D branch_to_delete
 
 
 
