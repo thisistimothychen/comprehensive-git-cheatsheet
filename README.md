@@ -107,6 +107,28 @@ Forces the clean to run (does not remove files in staging index, however):
     git clean -f
 
 
+## Ignoring Files
+#### Using .gitignore files
+Create a .gitignore file by saving a new notepad file as .gitignore (and file type as All Files) in your working directory or use the nano program in UNIX:
+
+    nano .gitignore
+
+Set rules:
+
+    # Pound signs denote a comment -- these are skipped.
+    *.php               # ignores all files with .php extension (note: the wildcard (*) does not apply to directories
+    !index.php          # do not ignore index.php (even though the line above this says to ignore it!)
+    assets/videos/      # ignore all files in a directory with a trailing slash
+
+Commit the .gitignore file:
+
+    git add .gitignore
+    git commit -m 'Add .gitignore file'
+
+
+
+
+
 ## Terminology
 HEAD
 - pointer to "tip" of current branch in repository
@@ -115,11 +137,6 @@ HEAD
    - where writing commits takes place
 
    
-
-
-
-
-
 
 
 
