@@ -244,6 +244,41 @@ Use a merge tool (use the following command to see the tools):
 - track changes to master (keep your branches and master in sync)
 
 
+## Stashing Changes
+The stash is not part of the repository, staging index, or working directory -- it's a special fourth area in Git. Similar to commits but don't have SHA's associated with them. Use when you have changes but you're not ready to commit them yet (e.g. when you need to switch branches but have uncommitted changes).
+
+    git stash save 'stash message that no one will see but should still be descriptive'
+
+View stashed changes (all stashes are available on any branch):
+
+    git stash list
+
+Show more information about the stash named `stash@{0}`:
+
+    git stash show stash@{0}
+
+Show `stash@{0}` as a patch (a section of code you can apply to different things to modify change them) (i.e. "show me the changes"):
+
+    git stash show -p stash@{0}
+
+(Commonly used) Retrieve a stashed change into current branch and remove from stash (there may be merge conflicts):
+
+    git stash pop
+    
+(Not as commonly used) Retrieve a stashed change but leave a copy in stash (there may be merge conflicts):
+
+    git stash apply
+
+Delete a stashed change named `stash@{0}`:
+
+    git stash drop stash@{0}
+
+**[CAUTION]** Delete all stashes:
+
+    git stash clear
+
+
+
 ## Terminology
 HEAD
 - pointer to "tip" of current branch in repository
