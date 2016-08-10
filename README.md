@@ -19,3 +19,12 @@ Full git cheatsheet based on Kevin Skoglund's Git Essential Training on Lynda.co
      - Return all commits made by a certain author: `git log --author="Name"`
      - Return all commits with "Init" in the commit message (case sensitive): `git log --grep="Init"`
 
+
+
+
+## Terminology
+#### HEAD
+- pointer to "tip" of current branch in repository
+- last state of repository, what was last checked out
+- points to parent of next commit
+   - where writing commits takes place
