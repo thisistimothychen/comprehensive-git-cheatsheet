@@ -1,6 +1,26 @@
 # Comprehensive Git Cheatsheet
 Full git cheatsheet based on Kevin Skoglund's Git Essential Training on Lynda.com
 
+
+
+### **Table of Contents**
+
+1. [Installing Git](#Installing Git)
+2. [Getting Started](#)
+3. [Making Changes to Files](#)
+4. [Undoing Changes](#)
+5. [Ignoring Files](#)
+6. [Navigating the Commit Tree](#)
+7. [Comparing commits](#)
+8. [Branching](#)
+9. [Merging](#)
+10. [Stashing Changes](#)
+11. [Remotes](#)
+12. [Terminology](#)
+13. [Great Resources](#)
+
+---
+
 ## Installing Git
 [Instructions on setting up Git](https://help.github.com/articles/set-up-git/)
 
