@@ -418,3 +418,4 @@ Tree-ish: something that references part of the tree
 
 ## Great Resources
 [Here are all the Git commands I used last week, and what they do. by Sam Corcos](https://medium.freecodecamp.com/git-cheat-sheet-and-best-practices-c6ce5321f52#.blar3050f)
+[Try Git!](http://try.github.io/)
